@@ -8,7 +8,6 @@ const addCategoryForm = (obj = {}) => {
       <div class="form-group">
         <label for="category_name">Category Name</label>
         <input type="text" class="form-control" id="category_name" aria-describedby="termTitle" placeholder="Enter Term Title" value="${obj.category_name || ''}" required>
-        <span> Or select </span>
       </div>
       <div class="form-group">
         <label for="category-definition">Definition</label>

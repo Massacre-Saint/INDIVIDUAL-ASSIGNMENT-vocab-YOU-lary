@@ -9,7 +9,9 @@ const navBar = () => {
   const domString = `
     <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><i class="fab fa-github-square fa-3x"></i></a>
+      <a class="navbar-brand" href="#">
+      <i class="fab fa-github-square fa-2x"></i>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

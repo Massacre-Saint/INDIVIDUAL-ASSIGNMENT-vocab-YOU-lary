@@ -13,6 +13,7 @@ const emptyEntries = () => {
 
 const showEntries = (array) => {
   clearDom();
+
   if (array.length) {
     let domString = '';
     array.forEach((item) => {
@@ -39,3 +40,5 @@ const showEntries = (array) => {
 };
 
 export { emptyEntries, showEntries };
+
+// add || line 23 for { || other created option}

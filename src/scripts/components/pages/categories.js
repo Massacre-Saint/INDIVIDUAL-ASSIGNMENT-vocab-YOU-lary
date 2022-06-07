@@ -17,11 +17,8 @@ const showCategories = (array) => {
     array.forEach((item) => {
       domString += `
       <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-        <div class="card-header">
-          <span>Category: ${item.category_name}</span>
-        </div>
         <div class="card-body">
-          <h5 class="card-title">Dark card title</h5>
+          <h5 class="card-title">${item.category_name}</h5>
           <p class="card-text">${item.definition}</p>
           <hr>
           <i class="btn btn-success fas fa-eye" id="view-category-btn--${item.firebaseKey}"></i>
