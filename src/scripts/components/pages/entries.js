@@ -1,5 +1,6 @@
 import renderToDOM from '../../helpers/renderToDom';
 import clearDom from '../../helpers/clearDom';
+// import { hideButton } from '../buttons/toggleCategoryButton';
 
 const emptyEntries = () => {
   const domString = `
@@ -12,7 +13,6 @@ const emptyEntries = () => {
 
 const showEntries = (array) => {
   clearDom();
-
   if (array.length) {
     let domString = '';
     array.forEach((item) => {

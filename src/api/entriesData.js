@@ -26,4 +26,29 @@ const createEntry = (entryObj) => new Promise((resolve, reject) => {
     }).catch(reject);
 });
 
-export { getEntries, createEntry };
+const updateEntry = (entryObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/entries/${entryObj.firebaseKey}.json`, entryObj)
+    .then(() => getEntries().then(resolve))
+    .catch(reject);
+});
+
+const deleteEntry = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/entries/${firebaseKey}.json`)
+    .then(() => {
+      getEntries().then((booksArray) => resolve(booksArray));
+    })
+    .catch((error) => reject(error));
+});
+
+const getSingleEntry = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/entries/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+export {
+  getEntries,
+  createEntry,
+  updateEntry,
+  deleteEntry,
+  getSingleEntry
+};
