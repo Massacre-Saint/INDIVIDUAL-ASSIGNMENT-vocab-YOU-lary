@@ -32,8 +32,8 @@ const createCategory = (categoryObject) => new Promise((resolve, reject) => {
     }).catch(reject);
 });
 
-const getEntriesByCategory = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/categories.json?orderBy="category_id"&equalTo="${firebaseKey}"`)
+const getCategoriesByEntry = (categoryId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/entries.json?orderBy="category_id"&equalTo="${categoryId}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
@@ -55,7 +55,7 @@ export {
   getCategories,
   getSingleCategory,
   createCategory,
-  getEntriesByCategory,
+  getCategoriesByEntry,
   updateCategory,
   deleteCategory
 };

@@ -3,7 +3,7 @@ import renderToDOM from '../../helpers/renderToDom';
 
 const selectCategory = (categoryId) => {
   let domString = `<label for="category_id"></label>
-    <select class="form-control" id="category_id" required>
+    <select class="form-control" id="category_id">
     <option value="">Select a Category</option>`;
 
   getCategories().then((categoryArray) => {
@@ -12,7 +12,7 @@ const selectCategory = (categoryId) => {
         <option 
           value="${category.category_name}" 
           ${categoryId === category.firebaseKey ? 'selected' : ''}>
-          ${category.category_name}
+           ${category.category_name}
         </option>`;
     });
 
