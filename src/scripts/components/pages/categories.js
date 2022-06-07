@@ -1,0 +1,40 @@
+import clearDom from '../../helpers/clearDom';
+import renderToDOM from '../../helpers/renderToDom';
+
+const emptyCategories = () => {
+  const domString = `
+  <span>
+    <h2>No Categories, please submit an entry!</h2>
+  </span>
+  `;
+  renderToDOM('#crud-content', domString);
+};
+
+const showCategories = (array) => {
+  clearDom();
+  if (array.length) {
+    let domString = '';
+    array.forEach((item) => {
+      domString += `
+      <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <span>Category: ${item.category_name}</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Dark card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <hr>
+          <i class="btn btn-success fas fa-eye" id="view-category-btn--${item.firebaseKey}"></i>
+          <i class="fas fa-edit btn btn-info" id="update-category--${item.firebaseKey}"></i>
+          <i class="btn btn-danger fas fa-trash-alt" id="delete-caetegory-btn--${item.firebaseKey}"></i>
+        </div>
+      </div>
+    `;
+    });
+    renderToDOM('#crud-content', domString);
+  } else {
+    emptyCategories();
+  }
+};
+
+export { showCategories, emptyCategories };
