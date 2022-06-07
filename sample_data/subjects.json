@@ -1,0 +1,27 @@
+{
+  "-V8mfwZSyfw" : {
+    "subject_name": "Digital Marketing",
+    "definition": "",
+    "firebaseKey": "-V8mfwZSyfw"
+  },
+  "-Zl6HaveLqm" : {
+    "subject_name": "Growth Hacking",
+    "definition": "Growth hacking is a subfield of marketing focused on the rapid growth of a company. It is referred to as both a process and a set of cross-disciplinary skills.",
+    "firebaseKey": "-Zl6HaveLqm"
+  },
+  "-fsteim3xzP" : {
+    "subject_name": "Graphic Design",
+    "definition": "The art or skill of combining text and pictures in advertisements, magazines, or books.",
+    "firebaseKey": "-fsteim3xzP"
+  },
+  "lhRvc5YPFM" : {
+    "subject_name": "User Experience",
+    "definition": "UX describes the emotions, attitudes, and ease-of-use a person has when using a product or service.",
+    "firebaseKey": "lhRvc5YPFM"
+  },
+  "-qJA8HU1O0O" : {
+    "subject_name": "Typography",
+    "definition": "The art or procedure of arranging type or processing data and printing from it.",
+    "firebaseKey": "-qJA8HU1O0O"
+  }
+}

@@ -22,11 +22,11 @@ const showCategories = (array) => {
         </div>
         <div class="card-body">
           <h5 class="card-title">Dark card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">${item.definition}</p>
           <hr>
           <i class="btn btn-success fas fa-eye" id="view-category-btn--${item.firebaseKey}"></i>
           <i class="fas fa-edit btn btn-info" id="update-category--${item.firebaseKey}"></i>
-          <i class="btn btn-danger fas fa-trash-alt" id="delete-caetegory-btn--${item.firebaseKey}"></i>
+          <i class="btn btn-danger fas fa-trash-alt" id="delete-category-btn--${item.firebaseKey}"></i>
         </div>
       </div>
     `;
