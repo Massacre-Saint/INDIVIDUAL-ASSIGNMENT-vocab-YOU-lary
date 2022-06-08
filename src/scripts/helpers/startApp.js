@@ -1,5 +1,4 @@
 import { getEntries } from '../../api/entriesData';
-import { logoutButton } from '../components/buttons/logoutBtn';
 import domBuilder from '../components/domBuilder';
 import navBar from '../components/navBar';
 import { showEntries } from '../components/pages/entries';
@@ -12,7 +11,6 @@ const startApp = () => {
   domEvents();
   formEvents();
   navBar();
-  logoutButton();
   navigationEvents();
   getEntries().then((entryArray) => showEntries(entryArray));
 };

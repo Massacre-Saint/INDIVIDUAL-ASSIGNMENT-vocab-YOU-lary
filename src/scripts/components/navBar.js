@@ -1,4 +1,5 @@
 import renderToDOM from '../helpers/renderToDom';
+import { logoutButton } from './buttons/logoutBtn';
 
 // const toggleCategories = () => {
 //   const hideCategories = document.querySelector('#toggle-categories');
@@ -28,16 +29,18 @@ const navBar = () => {
             <a class="nav-link" href="#">Categories</a>
           </li>
         </ul>
+        </div>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <div id="logout-btn"
-      </div>
+        <div id="logout-btn">
+        </div>
     </div>
   </nav>
   `;
   renderToDOM('#navbar', domString);
+  logoutButton();
 };
 
 export default navBar;
