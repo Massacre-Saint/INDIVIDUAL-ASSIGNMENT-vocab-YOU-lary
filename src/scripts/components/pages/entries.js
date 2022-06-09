@@ -1,5 +1,6 @@
 import renderToDOM from '../../helpers/renderToDom';
 import clearDom from '../../helpers/clearDom';
+import filterButtons from './filtersButtons';
 // import { hideButton } from '../buttons/toggleCategoryButton';
 
 const emptyEntries = () => {
@@ -13,14 +14,16 @@ const emptyEntries = () => {
 
 const showEntries = (array) => {
   clearDom();
+  filterButtons();
 
   if (array.length) {
     let domString = '';
+    console.warn();
     array.forEach((item) => {
       domString += `
       <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
         <div class="card-header">
-          <span>Category: ${item.category_id}</span>
+          <span>Category: ${item.categoryId}</span>
         </div>
         <div class="card-body">
           <h5 class="card-title">${item.term}</h5>
@@ -30,6 +33,7 @@ const showEntries = (array) => {
           <i class="fas fa-edit btn btn-info" id="update-entry--${item.firebaseKey}"></i>
           <i class="btn btn-danger fas fa-trash-alt" id="delete-entry-btn--${item.firebaseKey}"></i>
         </div>
+        <span>${item.date}</span>
       </div>
     `;
     });

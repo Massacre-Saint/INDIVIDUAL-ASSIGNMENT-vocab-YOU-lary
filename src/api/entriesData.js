@@ -45,10 +45,17 @@ const getSingleEntry = (firebaseKey) => new Promise((resolve, reject) => {
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
+
+const getEntriesByCategory = (categoryId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/entries.json?orderBy="categoryId"&equalTo="${categoryId} "`)
+    .then((response) => console.warn(response.data))
+    .catch((error) => reject(error));
+});
 export {
   getEntries,
   createEntry,
   updateEntry,
   deleteEntry,
-  getSingleEntry
+  getSingleEntry,
+  getEntriesByCategory
 };

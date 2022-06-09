@@ -1,5 +1,6 @@
 import clearDom from '../../helpers/clearDom';
 import renderToDOM from '../../helpers/renderToDom';
+import filterButtons from './filtersButtons';
 
 const emptyCategories = () => {
   const domString = `
@@ -12,6 +13,7 @@ const emptyCategories = () => {
 
 const showCategories = (array) => {
   clearDom();
+  filterButtons();
   if (array.length) {
     let domString = '';
     array.forEach((item) => {
@@ -21,7 +23,7 @@ const showCategories = (array) => {
           <h5 class="card-title">${item.category_name}</h5>
           <p class="card-text">${item.definition}</p>
           <hr>
-          <i class="btn btn-success fas fa-eye" id="view-category-btn--${item.firebaseKey}"></i>
+          <i class="btn btn-success fas fa-eye" id="view-category--${item.firebaseKey}"></i>
           <i class="fas fa-edit btn btn-info" id="update-category--${item.firebaseKey}"></i>
           <i class="btn btn-danger fas fa-trash-alt" id="delete-category-btn--${item.firebaseKey}"></i>
         </div>

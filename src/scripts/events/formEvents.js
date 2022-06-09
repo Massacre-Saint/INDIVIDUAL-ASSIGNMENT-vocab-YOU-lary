@@ -11,7 +11,8 @@ const formEvents = () => {
       const entryObject = {
         term: document.querySelector('#term').value,
         definition: document.querySelector('#definition').value,
-        category_id: document.querySelector('#category_id').value,
+        categoryId: document.querySelector('#category_id').value,
+        date: new Date()
         // selectedCategory_id: document.querySelector('#selectedCategory_id').value
       };
       createEntry(entryObject).then((entryArray) => showEntries(entryArray));
@@ -21,13 +22,14 @@ const formEvents = () => {
       const entryObject = {
         term: document.querySelector('#term').value,
         definition: document.querySelector('#definition').value,
-        category_id: document.querySelector('#category_id').value,
+        categoryId: document.querySelector('#category_id').value,
         firebaseKey
       };
       updateEntry(entryObject).then(() => {
         getEntries().then((response) => showEntries(response));
       });
     }
+
     if (e.target.id.includes('submit-category')) {
       const categoryObject = {
         category_name: document.querySelector('#category_name').value,

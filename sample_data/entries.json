@@ -1,7 +1,7 @@
 {
   "-MiBsfuTafbEQ7eAULxV" : {
     "term" : "Content Curation ",
-    "category_id" : "-MiBulenBnY8by9Xn7q1",
+    "categoryId" : "-MiBulenBnY8by9Xn7q1",
     "definition" : " Content curation is the process social media sites use to gather and present content (articles, links, videos, images, etc.) that are relevant to a specific topic or a user's area of interest.",
     "time" : "",
     "private": true,
@@ -10,7 +10,7 @@
   },
   "-MiBt86VzkC-EGmJnxjm" : {
     "term" : "User Experience (UX)",
-    "category_id" : "-MiBsknNSQ6aBG1-2lQS",
+    "categoryId" : "-MiBsknNSQ6aBG1-2lQS",
     "definition" : " UX describes the emotions, attitudes, and ease-of-use a person has when using a product or service. UX Design is the practice of using design to improve communication between a product and its user in order to enhance the user's overall experience.",
     "time" : "",
     "private": false,
