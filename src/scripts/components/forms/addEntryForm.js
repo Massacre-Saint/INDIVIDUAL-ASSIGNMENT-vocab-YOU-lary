@@ -25,8 +25,7 @@ const addEntryForm = (obj = {}) => {
       </button>
     </form>`;
   renderToDOM('#form-container', domString);
-  selectCategory(`${obj.category_id || ''}`);
+  selectCategory(`${obj.categoryId || ''}`);
 };
 
 export default addEntryForm;
-// date=new Date();date.setTime(date.getTime()+(days*24*60*60*1000));var expires="; expires="+date.toGMTString();}

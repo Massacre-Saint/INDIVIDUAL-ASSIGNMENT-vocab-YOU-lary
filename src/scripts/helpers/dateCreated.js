@@ -1,1 +1,1 @@
-// +new Date();
+date= new Date();

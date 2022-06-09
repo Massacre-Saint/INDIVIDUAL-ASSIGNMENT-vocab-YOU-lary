@@ -9,7 +9,11 @@ const filterButtons = () => {
       let domString = '';
       categoryArray.forEach((category) => {
         domString += `
-        <button type="button" class="btn btn-secondary">${category.category_name}</button>
+        <button 
+          id="filter-category-btn--${category.firebaseKey}"
+          type="button" class="btn btn-secondary">
+          ${category.category_name}
+        </button>
         `;
         renderToDOM('#filter', domString);
       });
