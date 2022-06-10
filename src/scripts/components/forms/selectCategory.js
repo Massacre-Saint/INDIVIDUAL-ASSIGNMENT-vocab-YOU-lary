@@ -9,8 +9,8 @@ const selectCategory = (categoryId) => {
   getCategories().then((categoryArray) => {
     categoryArray.forEach((category) => {
       domString += `
-        <option 
-          value="${category.firebaseKey}" 
+        <option
+          value="${category.firebaseKey}"
           ${categoryId === category.firebaseKey ? 'selected' : ''}>
            ${category.category_name}
         </option>`;

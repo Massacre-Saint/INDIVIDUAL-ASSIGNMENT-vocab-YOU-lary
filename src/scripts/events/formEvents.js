@@ -11,7 +11,7 @@ const formEvents = () => {
       const entryObject = {
         term: document.querySelector('#term').value,
         definition: document.querySelector('#definition').value,
-        categoryId: document.querySelector('#category_id').value,
+        categoryId: document.querySelector('#categoryId').value,
         date: new Date()
         // selectedCategory_id: document.querySelector('#selectedCategory_id').value
       };
@@ -22,7 +22,8 @@ const formEvents = () => {
       const entryObject = {
         term: document.querySelector('#term').value,
         definition: document.querySelector('#definition').value,
-        categoryId: document.querySelector('#category_id').value,
+        categoryId: document.querySelector('#categoryId').value,
+        date: new Date().toLocaleDateString,
         firebaseKey
       };
       updateEntry(entryObject).then(() => {

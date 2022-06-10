@@ -12,6 +12,15 @@ const emptyEntries = () => {
   renderToDOM('#crud-content', domString);
 };
 
+const noFilterEntries = () => {
+  const domString = `
+  <span>
+    <h2>No entries match this category!</h2>
+  </span>
+  `;
+  renderToDOM('#crud-content', domString);
+};
+
 const showEntries = (array) => {
   clearDom();
   filterButtons();
@@ -43,6 +52,6 @@ const showEntries = (array) => {
   }
 };
 
-export { emptyEntries, showEntries };
+export { emptyEntries, showEntries, noFilterEntries };
 
 // add || line 23 for { || other created option}

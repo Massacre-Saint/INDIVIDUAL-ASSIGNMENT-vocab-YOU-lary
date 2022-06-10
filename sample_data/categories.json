@@ -1,14 +1,20 @@
 {
   "-MiBsknNSQ6aBG1-2lQS": {
-    "category_name":"User Experience",
+    "category_name":"HTML",
     "definition":"UX describes the emotions, attitudes, and ease-of-use a person has when using a product or service.",
     "firebaseKey":"-MiBsknNSQ6aBG1-2lQS",
     "uid":""
   },
   "-MiBulenBnY8by9Xn7q1": {
-    "category_name":"Socail Media",
+    "category_name":"CSS",
     "definition":"Websites and applications that enable users to create and share content or to participate in social networking.",
     "firebaseKey":"-MiBulenBnY8by9Xn7q1",
+    "uid":""
+  },
+  "-MiBWRW822BnY8by9Xn7q1": {
+    "category_name":"Javascript",
+    "definition":"Websites and applications that enable users to create and share content or to participate in social networking.",
+    "firebaseKey":"-MiBWRW822BnY8by9Xn7q1",
     "uid":""
   }
 }

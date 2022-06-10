@@ -1,7 +1,7 @@
 import addCategoryForm from '../components/forms/addCategoryForm';
 import addEntryForm from '../components/forms/addEntryForm';
-import { deleteEntry, getEntriesByCategory, getSingleEntry } from '../../api/entriesData';
-import { showEntries } from '../components/pages/entries';
+import { deleteEntry, getSingleEntry, getEntriesByCategory } from '../../api/entriesData';
+import { noFilterEntries, showEntries } from '../components/pages/entries';
 import { deleteCategory, getSingleCategory } from '../../api/categoryData';
 import { showCategories } from '../components/pages/categories';
 // import viewEntryDetails from '../../api/mergedData';
@@ -41,7 +41,13 @@ const domEvents = () => {
     if (e.target.id.includes('filter-category-btn')) {
       const button = e.target.id.split('--');
       const firebaseKey = button[1];
-      getEntriesByCategory(firebaseKey).then((entryArray) => showEntries(entryArray));
+      getEntriesByCategory(firebaseKey).then((entryArray) => {
+        if (!entryArray.length) {
+          noFilterEntries();
+        } else {
+          showEntries(entryArray);
+        }
+      });
     }
   });
 };
