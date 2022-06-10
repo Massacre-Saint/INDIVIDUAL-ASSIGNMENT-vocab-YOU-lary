@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { noFilterEntries } from '../scripts/components/pages/entries';
 import firebaseConfig from './apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
@@ -47,8 +48,14 @@ const getSingleEntry = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const getEntriesByCategory = (categoryId) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/entries.json?orderBy="categoryId"&equalTo="${categoryId} "`)
-    .then((response) => console.warn(response.data))
+  axios.get(`${dbUrl}/entries.json?orderBy="categoryId"&equalTo="${categoryId}"`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([noFilterEntries()]);
+      }
+    })
     .catch((error) => reject(error));
 });
 export {

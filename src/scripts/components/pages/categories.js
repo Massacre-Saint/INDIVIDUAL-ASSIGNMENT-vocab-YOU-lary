@@ -1,6 +1,6 @@
 import clearDom from '../../helpers/clearDom';
 import renderToDOM from '../../helpers/renderToDom';
-import filterButtons from './filtersButtons';
+// import filterButtons from './filtersButtons';
 
 const emptyCategories = () => {
   const domString = `
@@ -13,7 +13,6 @@ const emptyCategories = () => {
 
 const showCategories = (array) => {
   clearDom();
-  filterButtons();
   if (array.length) {
     let domString = '';
     array.forEach((item) => {

@@ -1,8 +1,8 @@
 import { signMeOut } from '../components/buttons/logoutBtn';
-import { getCategories } from '../../api/categoryData';
-import { showCategories } from '../components/pages/categories';
 import addEntryForm from '../components/forms/addEntryForm';
+import { getCategories } from '../../api/categoryData';
 import { showEntries } from '../components/pages/entries';
+import { showCategories } from '../components/pages/categories';
 import { getEntries } from '../../api/entriesData';
 import { addButton, hideButton } from '../components/buttons/toggleCategoryButton';
 
