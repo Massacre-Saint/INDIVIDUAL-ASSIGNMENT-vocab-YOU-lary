@@ -28,7 +28,7 @@ const formEvents = (uid) => {
         uid
       };
       updateEntry(entryObject, uid).then(() => {
-        getEntries(uid).then((response) => showEntries(response));
+        getEntries(uid).then((response) => showEntries(response, uid));
       });
     }
 

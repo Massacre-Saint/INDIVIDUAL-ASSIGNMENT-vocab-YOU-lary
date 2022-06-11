@@ -24,8 +24,8 @@ const noFilterEntries = () => {
 
 const showEntries = (array, uid) => {
   clearDom();
-  filterButtons(uid);
   if (array.length) {
+    filterButtons(uid);
     let domString = '';
     array.forEach((item) => {
       domString += `
