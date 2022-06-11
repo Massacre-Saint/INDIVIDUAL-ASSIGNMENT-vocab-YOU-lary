@@ -6,12 +6,12 @@ import navigationEvents from '../events/navigationEvents';
 import formEvents from '../events/formEvents';
 import domEvents from '../events/domEvents';
 
-const startApp = () => {
+const startApp = (user) => {
   domBuilder();
-  domEvents();
-  formEvents();
+  domEvents(user.uid);
+  formEvents(user.uid);
   navBar();
-  navigationEvents();
-  getEntries().then((entryArray) => showEntries(entryArray));
+  navigationEvents(user.uid);
+  getEntries(user.uid).then((entryArray) => showEntries(entryArray));
 };
 export default startApp;

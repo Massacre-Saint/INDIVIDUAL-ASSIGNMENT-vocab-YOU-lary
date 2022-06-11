@@ -1,1 +1,0 @@
-date= new Date();

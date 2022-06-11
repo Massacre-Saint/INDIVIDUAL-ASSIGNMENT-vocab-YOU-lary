@@ -3,8 +3,8 @@ import firebaseConfig from './apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
-const getCategories = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/categories.json`)
+const getCategories = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/categories.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -21,27 +21,27 @@ const getSingleCategory = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const createCategory = (categoryObject) => new Promise((resolve, reject) => {
+const createCategory = (categoryObject, uid) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/categories.json`, categoryObject)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/categories/${response.data.name}.json`, payload)
         .then(() => {
-          getCategories(categoryObject).then(resolve);
+          getCategories(uid).then(resolve);
         });
     }).catch(reject);
 });
 
-const updateCategory = (categoryObj) => new Promise((resolve, reject) => {
+const updateCategory = (categoryObj, uid) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/categories/${categoryObj.firebaseKey}.json`, categoryObj)
-    .then(() => getCategories().then(resolve))
+    .then(() => getCategories(uid).then(resolve))
     .catch(reject);
 });
 
-const deleteCategory = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteCategory = (firebaseKey, uid) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/categories/${firebaseKey}.json`)
     .then(() => {
-      getCategories().then((categoryArray) => resolve(categoryArray));
+      getCategories(uid).then((categoryArray) => resolve(categoryArray));
     })
     .catch((error) => reject(error));
 });

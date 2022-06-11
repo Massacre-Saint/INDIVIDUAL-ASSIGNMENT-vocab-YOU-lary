@@ -2,10 +2,7 @@ import renderToDOM from '../../helpers/renderToDom';
 import clearDom from '../../helpers/clearDom';
 import selectCategory from './selectCategory';
 
-/* <label for="category_id">Define the related Category</label>
-        <input type="text" class="form-control" id="category_id"  aria-describedby="categoryName" placeholder="Category Name" value="
-        ${obj.category_id || ''}" required></input> */
-const addEntryForm = (obj = {}) => {
+const addEntryForm = (obj = {}, uid) => {
   clearDom();
   const domString = `
     <form id="${obj.firebaseKey ? `update-entry--${obj.firebaseKey}` : 'submit-entry'}" class="mb-4">
@@ -25,7 +22,7 @@ const addEntryForm = (obj = {}) => {
       </button>
     </form>`;
   renderToDOM('#form-container', domString);
-  selectCategory(`${obj.categoryId || ''}`);
+  selectCategory(`${obj.categoryId || ''}`, uid);
 };
 
 export default addEntryForm;

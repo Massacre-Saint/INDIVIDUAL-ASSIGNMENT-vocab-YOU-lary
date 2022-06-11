@@ -1,50 +1,47 @@
 import addCategoryForm from '../components/forms/addCategoryForm';
 import addEntryForm from '../components/forms/addEntryForm';
 import { deleteEntry, getSingleEntry, getEntriesByCategory } from '../../api/entriesData';
-import { noFilterEntries, showEntries } from '../components/pages/entries';
+import { showEntries } from '../components/pages/entries';
 import { deleteCategory, getSingleCategory } from '../../api/categoryData';
 import { showCategories } from '../components/pages/categories';
-// import viewEntryDetails from '../../api/mergedData';
 
-const domEvents = () => {
+const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('add-category-btn')) {
-      addCategoryForm();
+      addCategoryForm({}, uid);
     }
 
     if (e.target.id.includes('delete-entry-btn')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteEntry(firebaseKey).then((entryArray) => showEntries(entryArray));
+        deleteEntry(firebaseKey, uid).then((entryArray) => showEntries(entryArray));
       }
     }
 
     if (e.target.id.includes('update-entry')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleEntry(firebaseKey).then((entryObj) => addEntryForm(entryObj));
+      getSingleEntry(firebaseKey).then((entryObj) => addEntryForm(entryObj, uid));
     }
 
     if (e.target.id.includes('delete-category-btn')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteCategory(firebaseKey).then((categoryArray) => showCategories(categoryArray));
+        deleteCategory(firebaseKey, uid).then((categoryArray) => showCategories(categoryArray));
       }
     }
 
     if (e.target.id.includes('update-category')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleCategory(firebaseKey).then((categoryObj) => addCategoryForm(categoryObj));
+      getSingleCategory(firebaseKey).then((categoryObj) => addCategoryForm(categoryObj, uid));
     }
 
     if (e.target.id.includes('filter-category-btn')) {
       const button = e.target.id.split('--');
       const firebaseKey = button[1];
-      getEntriesByCategory(firebaseKey).then((entryArray) => {
-        if (!entryArray.length) {
-          noFilterEntries();
-        } else {
+      getEntriesByCategory(firebaseKey, uid).then((entryArray) => {
+        if (entryArray.length) {
           showEntries(entryArray);
         }
       });

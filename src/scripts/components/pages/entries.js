@@ -4,6 +4,7 @@ import filterButtons from './filtersButtons';
 // import { hideButton } from '../buttons/toggleCategoryButton';
 
 const emptyEntries = () => {
+  clearDom();
   const domString = `
   <span>
     <h2>No entries, please submit an entry!</h2>
@@ -21,13 +22,11 @@ const noFilterEntries = () => {
   renderToDOM('#crud-content', domString);
 };
 
-const showEntries = (array) => {
+const showEntries = (array, uid) => {
   clearDom();
-  filterButtons();
-
+  filterButtons(uid);
   if (array.length) {
     let domString = '';
-    console.warn();
     array.forEach((item) => {
       domString += `
       <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
@@ -53,5 +52,3 @@ const showEntries = (array) => {
 };
 
 export { emptyEntries, showEntries, noFilterEntries };
-
-// add || line 23 for { || other created option}
