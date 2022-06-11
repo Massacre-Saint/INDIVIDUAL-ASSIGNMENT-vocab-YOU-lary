@@ -18,7 +18,6 @@ const addCategoryForm = (obj = {}) => {
       </button>
     </form>`;
   renderToDOM('#form-container', domString);
-  // selectSubject(`${obj.category_name} || ''}`);
 };
 
 export default addCategoryForm;

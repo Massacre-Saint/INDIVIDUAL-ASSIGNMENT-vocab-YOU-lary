@@ -1,12 +1,12 @@
 import { getCategories } from '../../../api/categoryData';
 import renderToDOM from '../../helpers/renderToDom';
 
-const selectCategory = (categoryId) => {
+const selectCategory = (categoryId, uid) => {
   let domString = `<label for="categoryId"></label>
     <select class="form-control" id="categoryId">
     <option value="">Select a Category</option>`;
 
-  getCategories().then((categoryArray) => {
+  getCategories(uid).then((categoryArray) => {
     categoryArray.forEach((category) => {
       domString += `
         <option

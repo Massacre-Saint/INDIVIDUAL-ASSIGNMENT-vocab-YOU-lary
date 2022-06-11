@@ -3,7 +3,7 @@ import { createEntry, getEntries, updateEntry } from '../../api/entriesData';
 import { showCategories } from '../components/pages/categories';
 import { showEntries } from '../components/pages/entries';
 
-const formEvents = () => {
+const formEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -12,10 +12,10 @@ const formEvents = () => {
         term: document.querySelector('#term').value,
         definition: document.querySelector('#definition').value,
         categoryId: document.querySelector('#categoryId').value,
-        date: new Date()
-        // selectedCategory_id: document.querySelector('#selectedCategory_id').value
+        date: new Date().toLocaleDateString(),
+        uid
       };
-      createEntry(entryObject).then((entryArray) => showEntries(entryArray));
+      createEntry(entryObject, uid).then((entryArray) => showEntries(entryArray, uid));
     }
     if (e.target.id.includes('update-entry')) {
       const [, firebaseKey] = e.target.id.split('--');
@@ -23,20 +23,22 @@ const formEvents = () => {
         term: document.querySelector('#term').value,
         definition: document.querySelector('#definition').value,
         categoryId: document.querySelector('#categoryId').value,
-        date: new Date().toLocaleDateString,
-        firebaseKey
+        date: new Date().toLocaleDateString(),
+        firebaseKey,
+        uid
       };
-      updateEntry(entryObject).then(() => {
-        getEntries().then((response) => showEntries(response));
+      updateEntry(entryObject, uid).then(() => {
+        getEntries(uid).then((response) => showEntries(response));
       });
     }
 
     if (e.target.id.includes('submit-category')) {
       const categoryObject = {
         category_name: document.querySelector('#category_name').value,
-        definition: document.querySelector('#category-definition').value
+        definition: document.querySelector('#category-definition').value,
+        uid
       };
-      createCategory(categoryObject).then((categoryArray) => showCategories(categoryArray));
+      createCategory(categoryObject, uid).then((categoryArray) => showCategories(categoryArray));
     }
 
     if (e.target.id.includes('update-category')) {
@@ -44,10 +46,11 @@ const formEvents = () => {
       const categoryObject = {
         category_name: document.querySelector('#category_name').value,
         definition: document.querySelector('#category-definition').value,
-        firebaseKey
+        firebaseKey,
+        uid
       };
-      updateCategory(categoryObject).then(() => {
-        getCategories().then((response) => showCategories(response));
+      updateCategory(categoryObject, uid).then(() => {
+        getCategories(uid).then((response) => showCategories(response));
       });
     }
   });

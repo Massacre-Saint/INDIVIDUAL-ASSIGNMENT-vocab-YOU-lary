@@ -1,5 +1,5 @@
 import getSubjects from '../../../api/subjectsData';
-import renderToDOM from '../../helpers/renderToDom';
+import renderToDOM from '../scripts/helpers/renderToDom';
 
 const selectSubject = (subjectId) => {
   let domString = `<label for="subject_id">Select a Subject</label>

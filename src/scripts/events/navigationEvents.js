@@ -6,21 +6,21 @@ import { showCategories } from '../components/pages/categories';
 import { getEntries } from '../../api/entriesData';
 import { addButton, hideButton } from '../components/buttons/toggleCategoryButton';
 
-const navigationEvents = () => {
+const navigationEvents = (uid) => {
   document.querySelector('#logout-btn')
     .addEventListener('click', signMeOut);
 
   document.querySelector('#categories').addEventListener('click', () => {
-    getCategories().then((categoryArray) => showCategories(categoryArray));
+    getCategories(uid).then((categoryArray) => showCategories(categoryArray));
     addButton();
   });
 
   document.querySelector('#create-entry').addEventListener('click', () => {
-    addEntryForm({});
+    addEntryForm({}, uid);
   });
 
   document.querySelector('#entries').addEventListener('click', () => {
-    getEntries().then((entryArray) => showEntries(entryArray));
+    getEntries(uid).then((entryArray) => showEntries(entryArray));
     hideButton();
   });
 };
