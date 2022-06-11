@@ -15,7 +15,7 @@ const domEvents = (uid) => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteEntry(firebaseKey, uid).then((entryArray) => showEntries(entryArray));
+        deleteEntry(firebaseKey, uid).then((entryArray) => showEntries(entryArray, uid));
       }
     }
 
@@ -42,7 +42,7 @@ const domEvents = (uid) => {
       const firebaseKey = button[1];
       getEntriesByCategory(firebaseKey, uid).then((entryArray) => {
         if (entryArray.length) {
-          showEntries(entryArray);
+          showEntries(entryArray, uid);
         }
       });
     }
