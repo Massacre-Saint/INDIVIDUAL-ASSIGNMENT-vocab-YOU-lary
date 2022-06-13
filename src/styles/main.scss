@@ -3,11 +3,17 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: #0F4C5C;
   text-align: center;
+  padding-top:5%;
 }
 
-#navbar {
-  padding-left: 0px;
+.navbar {
+  padding: .5% 3% 0% 3%;
 }
+  .navbar-brand {
+    color: #FB8B24;
+  }
+    .navbar-toggler-icon {
+      background-color: #FB8B24;
+    }

@@ -21,9 +21,8 @@ const showCategories = (array) => {
           <h5 class="card-title">${item.category_name}</h5>
           <p class="card-text">${item.definition}</p>
           <hr>
-          <i class="btn btn-success fas fa-eye" id="view-category--${item.firebaseKey}"></i>
-          <i class="fas fa-edit btn btn-info" id="update-category--${item.firebaseKey}"></i>
-          <i class="btn btn-danger fas fa-trash-alt" id="delete-category-btn--${item.firebaseKey}"></i>
+          <i class="fas fa-edit btn" id="update-category--${item.firebaseKey}"></i>
+          <i class="btn fas fa-trash-alt" id="delete-category-btn--${item.firebaseKey}"></i>
         </div>
       </div>
     `;

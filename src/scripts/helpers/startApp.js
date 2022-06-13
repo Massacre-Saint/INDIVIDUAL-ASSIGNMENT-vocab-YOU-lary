@@ -7,10 +7,11 @@ import formEvents from '../events/formEvents';
 import domEvents from '../events/domEvents';
 
 const startApp = (user) => {
+  console.warn(user);
   domBuilder();
   domEvents(user.uid);
   formEvents(user.uid);
-  navBar();
+  navBar(user);
   navigationEvents(user.uid);
   getEntries(user.uid).then((entryArray) => showEntries(entryArray, user.uid));
 };

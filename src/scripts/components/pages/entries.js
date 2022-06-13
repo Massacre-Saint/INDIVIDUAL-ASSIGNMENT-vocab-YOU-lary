@@ -3,17 +3,18 @@ import clearDom from '../../helpers/clearDom';
 import filterButtons from './filtersButtons';
 // import { hideButton } from '../buttons/toggleCategoryButton';
 
-const emptyEntries = () => {
+const emptyEntries = (content) => {
   clearDom();
   const domString = `
-  <span>
-    <h2>No entries, please submit an entry!</h2>
+  <span class="no-entries">
+    <h2>${content || 'No entries found.'}</h2>
   </span>
   `;
   renderToDOM('#crud-content', domString);
 };
 
 const noFilterEntries = () => {
+  clearDom();
   const domString = `
   <span>
     <h2>No entries match this category!</h2>
@@ -37,9 +38,8 @@ const showEntries = (array, uid) => {
           <h5 class="card-title">${item.term}</h5>
           <p class="card-text">${item.definition}</p>
           <hr>
-          <i class="btn btn-success fas fa-eye" id="view-entry-btn--${item.firebaseKey}"></i>
-          <i class="fas fa-edit btn btn-info" id="update-entry--${item.firebaseKey}"></i>
-          <i class="btn btn-danger fas fa-trash-alt" id="delete-entry-btn--${item.firebaseKey}"></i>
+          <i class="fas fa-edit btn" id="update-entry--${item.firebaseKey}"></i>
+          <i class="btn fas fa-trash-alt" id="delete-entry-btn--${item.firebaseKey}"></i>
         </div>
         <span>${item.date}</span>
       </div>

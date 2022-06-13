@@ -7,10 +7,6 @@ import { showCategories } from '../components/pages/categories';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
-    if (e.target.id.includes('add-category-btn')) {
-      addCategoryForm({}, uid);
-    }
-
     if (e.target.id.includes('delete-entry-btn')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
