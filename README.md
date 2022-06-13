@@ -1,49 +1,15 @@
-# vocab-YOU-lary
-
-In this student assessment, you will be creating an application that allows users to CRUD vocabulary cards, authenticate with Google, and filter.
-
-## Learning Objectives
-- Single Responsibility Principle (each component/function should have one job)
-- Import/Export modules
-- DOM manipulation with Vanilla JS
-- DOM querying with Vanilla JS
-- Representing data as HTML
-- Usage of semantic HTML5 tags
-- Asynchronous Programming
-- Promises 
-
-## REMINDER
-We are not looking for completion of all stretch goals, but are focused on you hitting MVP, although if you can make it work completely, then wahoo!
-
-What we are looking for is MVP, time management, critical thinking about the concepts, creative thinking to bind the concepts together for a solution, and collaboration with your teammates and instruction team.
-
-If you only get MVP complete, but display the above Core Skills and can demonstrate understanding of the fundamental code concepts, then you are learning and growing - which is what we care about.
-
-## Tools To Use:
-- Postman for API testing
-- Firebase for database, rules, and authentication
-- Webpack template setup steps (Located in your cohort repo)
-- dbdiagram.io for creating your ERD
-- Figma, google slides, or paper for flow charting your application
-- Axios for requests
-- Github projects/milestones for planning out work
-- Bootstrap 5 for styling
-
-Make sure your Developer Tools are open at all times while working on this project. Use the messages provided in the Console to determine what code needs to be fixed or implemented, and use breakpoints in the Sources tab to step through your code as you debug.
-
-## Get Started
-Create issue tickets from the items below to help you get started. 
-- [ ] Setup your firebase project and create the `.env` file with your keys. (Reference the [Firebase videos](https://vimeo.com/showcase/codetracker-firebase) if you need help getting started)
-- [ ] Plan your project. Take no more than an hour to plan (ERD, Flow Chart, Postman)
-- [ ] Use this template (webpack) to create the project on your github account
-- [ ] Make sure you are in your `workspace/foundations/exercises` directory
-- [ ] `git clone YOUR_GITHUB_REPO_LINK`
-- [ ] `cd` into the directory
-- [ ] Run `npm install` to install your dependencies
-- [ ] Type `code .` to open the project in VS Code
-- [ ] `npm start` to start your server
-- [ ] Plan your project by creating the tickets you will work through using Github Projects
-- [ ] START CODING!
+# Project: Vocab-U-lary
+## Primary Features
+- [ ] Users are able to create, render to DOM, update, and delete vocabulary entries and their respective categories the entries are catogorizeed in.
+- [ ] Dynamically filter on the entry term to easily search through entries. 
+- [ ] Multi client application applies to own user creations. Not able to access other's users data.
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
 
 # MVP Requirements
 [MVP Wireframe](https://www.figma.com/file/IW4jF3GnzCFLYbEXlgFNIZ/MVP)
